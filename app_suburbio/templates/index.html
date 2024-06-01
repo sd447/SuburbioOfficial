@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+
+    <title>Suburbio em Transe</title>
+</head>
+
+<body>
+    <nav>
+        <ul class="navbar">
+            <li class="li-nav" id="logo"><img src="{% static/'images/suburbio.png' %}" alt="logo"> </li>
+            <li class="li-nav"><img src="/images/location.svg" alt="localização">Av. São Félix, 601 - Vista Alegre, Rio de Janeiro <img src="/images/expand.svg"> </li>
+            <li class="li-nav"><img src="/images/instagram.svg" alt="instagram">@Suburbioemtranse </li>
+            <li class="li-nav"><img src="/images/calendar.svg" alt="Calendario">Eventos </li>
+            <li class="li-nav"><img src="/images/barra.svg"></li>
+        </ul>
+    </nav>
+
+    <section class="carrossel">
+        <div class="text-carrossel">
+            <h1 class="title-carrossel">Suburbio em transe</h1>
+            <span class="p-carrossel">Na vastidão silenciosa da noite, as estrelas cintilam como diamantes dispersos pelo universo. Sob o manto escuro do céu, a lua brilha com seu fulgor prateado, lançando sua luz sobre a terra adormecida. Nas sombras das árvores, segredos sussurram entre as folhas ao sopro do vento noturno, enquanto os grilos entoam sua sinfonia misteriosa. </span>
+            <button>Agende sua visita</button>
+        </div>
+
+        <div class="carousel" onmouseover="pauseCarousel()" onmouseout="startCarousel()">
+            <img class="carousel-img active" src="images/suburbio.png" alt="Image 1">
+            <img class="carousel-img" src="images/image.png" alt="Image 2">
+            <img class="carousel-img" src="image3.jpg" alt="Image 3">
+
+            <div class="indicators">
+              <span class="indicator active" onclick="showImage(0)"></span>
+              <span class="indicator" onclick="showImage(1)"></span>
+              <span class="indicator" onclick="showImage(2)"></span>
+            </div>
+          </div>
+
+    </section>
+
+    <div class="day-background">
+        <ul class="day">
+            <li class="li-day">DOM</li>
+            <li class="li-day">SEG</li>
+            <li class="li-day">TER</li>
+            <li class="li-day">QUA</li>
+            <li class="li-day">QUI</li>
+            <li class="li-day">SEX</li>
+            <li class="li-day">SAB</li>
+        </ul>
+    </div>
+
+
+    <script src= "{% static 'script/script.js' %}"></script>
+</body>
+
+</html>
