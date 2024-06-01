@@ -15,11 +15,11 @@
 <body>
     <nav>
         <ul class="navbar">
-            <li class="li-nav" id="logo"><img src="{% static/'images/suburbio.png' %}" alt="logo"> </li>
-            <li class="li-nav"><img src="/images/location.svg" alt="localização">Av. São Félix, 601 - Vista Alegre, Rio de Janeiro <img src="/images/expand.svg"> </li>
-            <li class="li-nav"><img src="/images/instagram.svg" alt="instagram">@Suburbioemtranse </li>
-            <li class="li-nav"><img src="/images/calendar.svg" alt="Calendario">Eventos </li>
-            <li class="li-nav"><img src="/images/barra.svg"></li>
+            <li class="li-nav" id="logo"><img src="{% static 'app_suburbio/images/suburbio.png' %}"> </li>
+            <li class="li-nav"><img src="{% static 'app_suburbio/images/location.svg' %}" >Av. São Félix, 601 - Vista Alegre, Rio de Janeiro <img src="{% static 'app_suburbio/images/expand.svg' %}"> </li>
+            <li class="li-nav"><img src="{% static 'app_suburbio/images/instagram.svg' %}" >@Suburbioemtranse </li>
+            <li class="li-nav"><img src="{% static 'app_suburbio/images/calendar.svg' %}" >Eventos </li>
+            <li class="li-nav"><img src="{% static 'app_suburbio/images/barra.svg' %}"></li>
         </ul>
     </nav>
 
@@ -31,9 +31,9 @@
         </div>
 
         <div class="carousel" onmouseover="pauseCarousel()" onmouseout="startCarousel()">
-            <img class="carousel-img active" src="images/suburbio.png" alt="Image 1">
-            <img class="carousel-img" src="images/image.png" alt="Image 2">
-            <img class="carousel-img" src="image3.jpg" alt="Image 3">
+            <img class="carousel-img active" src="{% static 'app_suburbio/images/suburbio.png' %}" alt="Image 1">
+            <img class="carousel-img" src="{% static 'app_suburbio/images/image.png' %}" alt="Image 2">
+            <img class="carousel-img" src="{% static 'app_suburbio/images/image3.jpg' %}" alt="Image 3">
 
             <div class="indicators">
               <span class="indicator active" onclick="showImage(0)"></span>
