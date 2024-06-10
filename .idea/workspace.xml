@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5f50cf9-a93d-42b2-84a6-4a7d2ef4d7f7" name="Changes" comment="Inicio do projeto usando o Django">
+    <list default="true" id="d5f50cf9-a93d-42b2-84a6-4a7d2ef4d7f7" name="Changes" comment="Resolvendo problemas de compatibilida dos estaticos com o django">
+      <change afterPath="$PROJECT_DIR$/app_suburbio/static/images/NossoSonho.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_suburbio/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_suburbio/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_suburbio/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app_suburbio/static/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app_suburbio/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app_suburbio/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_suburbio/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_suburbio/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/suburbio_em_transe/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/suburbio_em_transe/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +41,20 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;sd447&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="dcad88cc-694d-4c00-bd5c-4e2f0db3f693" />
+        <option name="url" value="https://github.com/sd447/SuburbioOfficial.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -46,21 +64,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "F:/Dev/Projects/suburbio/app_suburbio/static/images",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "proofread",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
+    ]
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Dev\Projects\suburbio\app_suburbio\static\images" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -78,6 +108,9 @@
       <updated>1717205198718</updated>
       <workItem from="1717205202619" duration="3589000" />
       <workItem from="1717208998978" duration="3099000" />
+      <workItem from="1717645870732" duration="499000" />
+      <workItem from="1717956692926" duration="17202000" />
+      <workItem from="1717983244459" duration="6672000" />
     </task>
     <task id="LOCAL-00001" summary="Inicio do projeto usando o Django">
       <option name="closed" value="true" />
@@ -87,7 +120,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717213961475</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Resolvendo problemas de compatibilida dos estaticos com o django">
+      <option name="closed" value="true" />
+      <created>1717217075040</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1717217075040</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -95,6 +136,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Inicio do projeto usando o Django" />
-    <option name="LAST_COMMIT_MESSAGE" value="Inicio do projeto usando o Django" />
+    <MESSAGE value="Resolvendo problemas de compatibilida dos estaticos com o django" />
+    <option name="LAST_COMMIT_MESSAGE" value="Resolvendo problemas de compatibilida dos estaticos com o django" />
   </component>
 </project>
