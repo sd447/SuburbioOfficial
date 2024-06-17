@@ -1,0 +1,10 @@
+{% load static %}
+<header>
+    <ul class="navbar">
+        <li class="li-nav" id="logo"><a href="{% url 'index' %}"> <img src="{% static 'images/suburbio.png' %}"></a></li>
+        <li class="li-nav"><img src="{% static 'images/location.svg' %}" >Av. São Félix, 601 - Vista Alegre, Rio de Janeiro <img src="{% static 'images/expand.svg' %}"> </li>
+        <li class="li-nav"><a href="https://www.instagram.com/suburbioemtranse/" target="_blank"><img src="{% static 'images/instagram.svg' %}" >@Suburbioemtranse </a></li>
+        <li class="li-nav"><a href="#events"> <img src="{% static 'images/calendar.svg' %}" >Eventos </a></li>
+        <li class="li-nav"><img src="{% static 'images/user.svg' %}"><a href="{% url 'login' %}">Login</a> / <a href="{% url 'cadastro' %}"> Cadastre-se</a> </li>
+    </ul>
+</header>

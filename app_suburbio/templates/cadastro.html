@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/cadastro.css' %}" rel="stylesheet" />
+
+    <title>Suburbio em Transe</title>
+</head>
+
+<body>
+        <div class="content>">
+            {% include 'header.html' %}
+                <div class="events-container">
+                    <h2 class="title-events">Cadastrar Evento</h2>
+                    <div class="formulario">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <label for="name">Nome:</label>
+                        <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+
+                        <label for="lastname">Sobrenome:</label>
+                        <input type="text" id="lastname" name="lastname" placeholder="Digite seu sobrenome" required>
+
+                        <label for="user">Usuário:</label>
+                        <input type="text" id="user" name="username" placeholder="Digite seu nome de usuário" required>
+
+                        <label for="password">Senha:</label>
+                        <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+
+                        <label for="confirm_password">Confirme a Senha:</label>
+                        <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirme sua senha" required>
+
+                        <input type="submit" value="Cadastrar">
+                    </form>
+                    </div>
+                </div>
+            {% include 'footer.html' %}
+        </div>
+</body>
+
+</html>
