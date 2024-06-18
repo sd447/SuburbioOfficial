@@ -10,4 +10,6 @@ urlpatterns = [
     path('cadastrarevento/', views.cadastrarevento, name='cadastrarevento'),
     path('SignUp/', views.cadastro, name='cadastro'),
     path('Login/', views.login_view, name='login'),
+    path('/', views.index_logged_in, name='index_logged_in'),
+    path('logout/', views.logout_view, name='logout'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

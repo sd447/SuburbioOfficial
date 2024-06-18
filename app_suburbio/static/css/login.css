@@ -1,8 +1,80 @@
-body{
-    font-family: 'Inter', sans-serif;
+.container{
     display: flex;
     flex-direction: column;
+    gap: 1rem;
+    width: 100%;
     min-height: 100vh;
-    overflow-x: hidden;
-    font-size: 14px;
+    align-items: center;
+    justify-content: center;
+}
+
+.events-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    min-height: 74.1vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-fieldset {
+    width: 375px;
+    height: 310px;
+    border: #000000b5 solid 4px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: black 0 0 20px;
+}
+
+.form-legend{
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 10px;
+    text-align: center;
+    padding: 5px 15px;
+    background: black;
+    color: white;
+    border-radius: 50px;
+    box-shadow: black 0 0 10px;
+}
+
+.form-legend img{
+    width: 50px;
+    height: 60px;
+}
+
+.form-fieldset form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 1rem;
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+.form-content{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 20vw;
+    height: 4vh;
+    align-items: center;
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+#button{
+  width: 150px;
+  height: 50px;
+  border-radius: 15px;
+  border: none;
+  background: black;
+  color: #fff;
+  font-size: 20px;
 }

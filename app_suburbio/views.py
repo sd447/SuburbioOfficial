@@ -4,27 +4,41 @@ from .models import Event, User
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.hashers import make_password
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
+
 
 def index(request):
-    events = Event.objects.all()
-    return render(request, 'index.html', {'events': events})
+    if request.user.is_authenticated:
+        return redirect('index_logged_in')
+    else:
+        events = Event.objects.all()
+        return render(request, 'index.html', {'events': events})
 
+
+@login_required
+def index_logged_in(request):
+    events = Event.objects.all()
+    return render(request, 'index_logged_in.html', {'events': events})
+
+
+@login_required
 def cadastrarevento(request):
     if request.method == 'POST':
         title = request.POST.get('title')
         description = request.POST.get('description')
-        image = request.FILES.get('image')  # Acesse a imagem enviada
+        image = request.FILES.get('image')
         date = request.POST.get('date')
 
         event = Event(
             title=title,
             description=description,
-            image=Event.convert_image_to_base64(image),  # Atribua a imagem ao campo image
+            image=Event.convert_image_to_base64(image),
             date=date
         )
-        event.save()  # Salve a instância do modelo no banco de dados
+        event.save()
 
-        return redirect('index')  # Redirecione para a página de índice
+        return redirect('index')
 
     events = Event.objects.all()
     return render(request, 'cadastrarEvento.html', {'events': events})
@@ -40,9 +54,7 @@ def cadastro(request):
         confirm_password = request.POST.get('confirm_password')
         print(request.POST)
 
-        # Verifique se a senha e a confirmação da senha são iguais
         if password == confirm_password:
-            # Crie um hash da senha
             password = make_password(password)
 
             user = User(
@@ -51,11 +63,11 @@ def cadastro(request):
                 username=username,
                 password=password
             )
-            user.save()  # Salve a instância do modelo no banco de dados
+            user.save()
 
-            login(request, user)  # Faça login no usuário
+            login(request, user)
 
-            return redirect('index')  # Redirecione para a página de índice
+            return redirect('index')
         else:
             # As senhas não correspondem
             return render(request, 'cadastro.html', {'error': 'As senhas não correspondem'})
@@ -66,16 +78,18 @@ def cadastro(request):
 @csrf_exempt
 def login_view(request):
     if request.method == 'POST':
-        form = User(request.POST)
-        if form.is_valid():
-            username = form.username.get('username')
-            password = form.password.get('password')
-            user = authenticate(username=username, password=password)  # Autentica o usuário
-            if user is not None:
-                login(request, user)  # Faz login do usuário
-                return redirect('home')  # Redireciona para a página inicial
-            else:
-                return HttpResponse("Invalid login details.")  # Mensagem de erro de login inválido
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)  # Autentica o usuário
+        if user is not None:
+            login(request, user)
+            return redirect('index')
+        else:
+            return HttpResponse("Invalid login details.")
     else:
-        form = User()
-    return render(request, 'login.html', {'form': form})
+        return render(request, 'login.html')
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('index')

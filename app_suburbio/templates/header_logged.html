@@ -4,6 +4,7 @@
         <li class="li-nav" id="logo"><a href="{% url 'index' %}"> <img src="{% static 'images/suburbio.png' %}"></a></li>
         <li class="li-nav"><a href="https://www.instagram.com/suburbioemtranse/" target="_blank"><img src="{% static 'images/instagram.svg' %}" >@Suburbioemtranse </a></li>
         <li class="li-nav"><a href="#events"> <img src="{% static 'images/calendar.svg' %}" >Eventos </a></li>
-        <li class="li-nav"><img src="{% static 'images/user.svg' %}"><a href="{% url 'login' %}">Login</a> / <a href="{% url 'cadastro' %}"> Cadastre-se</a> </li>
+        <li class="li-nav" ><a id="cadastrar-button" href="{% url 'cadastrarevento' %}" >Cadastrar Evento</a> </li>
+        <li class="li-nav"><a href="{% url 'logout' %}"><img src="{% static 'images/logout.svg' %}">Sair</a></li>
     </ul>
 </header>

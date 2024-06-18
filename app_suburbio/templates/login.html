@@ -18,17 +18,20 @@
         <div class="content>">
             {% include 'header.html' %}
                 <div class="events-container">
-                    <h2 class="title-events">Cadastrar Evento</h2>
-                    <div class="formulario">
-                    <form method="POST" enctype="multipart/form-data">
-                        <label for="user">Usuário:</label>
-                        <input type="text" id="user" name="username" placeholder="Digite seu nome de usuário" required>
+                    <fieldset class="form-fieldset">
+                        <legend class="form-legend"><img src="{% static 'images/icon.png' %}"></legend>
+                        <form method="POST" enctype="multipart/form-data">
+                            <label for="user">Usuário:
+                            <input type="text" class="form-content" id="user" maxlength="15" name="username" placeholder="Digite seu nome de usuário" required>
+                            </label>
 
-                        <label for="password">Senha:</label>
-                        <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+                            <label for="password">Senha:
+                            <input type="password" class="form-content" id="password" maxlength="45" name="password" placeholder="Digite sua senha" required>
+                            </label>
 
-                        <input type="submit" value="Entar">
-                    </form>
+                            <input type="submit" id="button" value="Entrar">
+                        </form>
+                    </fieldset>
                     </div>
                 </div>
             {% include 'footer.html' %}
