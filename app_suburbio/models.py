@@ -5,6 +5,20 @@ from django.core.files.base import ContentFile
 from PIL import Image
 import base64
 import io
+import psycopg2
+
+try:
+    connection = psycopg2.connect(
+        dbname="suburbioDB",
+        user="postgres",
+        password="1234",
+        host="localhost",
+        port="5432"
+    )
+    print("Conexão bem-sucedida!")
+    connection.close()
+except Exception as e:
+    print(f"Erro ao conectar: {e}")
 
 
 class Event(models.Model):

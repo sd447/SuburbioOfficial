@@ -121,11 +121,6 @@ body {
   border: #000 solid 2px;
 }
 
-.li-day:hover{
-  background: #fff;
-  color: #000;
-}
-
 .secundaria{
     margin: 20px 10vw 20px 10vw;
 }
