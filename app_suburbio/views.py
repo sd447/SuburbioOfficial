@@ -4,6 +4,7 @@ from .models import Event, User
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.hashers import make_password
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.models import User as AuthUser
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 
@@ -11,9 +12,8 @@ from django.contrib.auth import logout
 def index(request):
     if request.user.is_authenticated:
         return redirect('index_logged_in')
-    else:
-        events = Event.objects.all()
-        return render(request, 'index.html', {'events': events})
+    events = Event.objects.all()
+    return render(request, 'index.html', {'events': events})
 
 
 @login_required
@@ -52,22 +52,21 @@ def cadastro(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
         confirm_password = request.POST.get('confirm_password')
-        print(request.POST)
+
+        # Verificar se o nome de usuário já existe
+        if AuthUser.objects.filter(username=username).exists():
+            return render(request, 'cadastro.html', {'error': 'O nome de usuário já existe'})
 
         if password == confirm_password:
-            password = make_password(password)
-
-            user = User(
-                name=name,
-                lastname=lastname,
-                username=username,
-                password=password
-            )
+            user = AuthUser.objects.create_user(username=username, password=password, first_name=name, last_name=lastname)
             user.save()
 
-            login(request, user)
-
-            return redirect('index')
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('index')
+            else:
+                return HttpResponse("Invalid login details.")
         else:
             # As senhas não correspondem
             return render(request, 'cadastro.html', {'error': 'As senhas não correspondem'})
@@ -76,14 +75,18 @@ def cadastro(request):
 
 
 @csrf_exempt
+@csrf_exempt
 def login_view(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-        user = authenticate(request, username=username, password=password)  # Autentica o usuário
+        user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('index')
+            try:
+                return redirect('index_logged_in')  # Redirecionar para 'index_logged_in' após o login
+            except Exception as e:
+                return HttpResponse(f"Error during redirection: {e}")
         else:
             return HttpResponse("Invalid login details.")
     else:
