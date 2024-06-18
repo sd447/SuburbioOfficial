@@ -6,6 +6,7 @@ from PIL import Image
 import base64
 import io
 
+
 class Event(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
@@ -31,14 +32,13 @@ class Event(models.Model):
     def __str__(self):
         return self.title
 
+
 class User(models.Model):
     name = models.CharField(max_length=50)
     lastname = models.CharField(max_length=50)
-    username = models.CharField(max_length=50)
+    username = models.CharField(max_length=50, unique=True)
     password = models.CharField(max_length=128)  # Aumente o tamanho do campo para acomodar o hash da senha
     last_login = models.DateTimeField(default=timezone.now)  # Adicione este campo
 
     def is_valid(self):
         pass
-
-

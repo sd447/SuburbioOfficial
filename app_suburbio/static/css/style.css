@@ -22,7 +22,7 @@ header{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 0 200px 0 200px;
+  margin: 0 10vw;
   padding: 0;
   height: 100%;
 }
@@ -44,6 +44,15 @@ header{
   filter: invert(100%);
 }
 
+#cadastrar-button{
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 5px;
+}
+
 
 
 footer {
@@ -53,4 +62,5 @@ footer {
     padding: 20px 200px;
     text-align: center;
     width: 100vw;
+    clear: both;
 }
